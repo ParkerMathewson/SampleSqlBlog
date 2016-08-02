@@ -14,7 +14,10 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
+  # Blank for MC12
+  #password:
+  # sqlserver for AZZA
+  password: sqlserver
   socket: /tmp/mysql.sock
 
 development:

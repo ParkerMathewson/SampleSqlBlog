@@ -1,0 +1,18 @@
+rails generate controller controller-name
+	generates controller and supporting view
+
+rails generate model model-name name:type name:type....
+	generates model
+	rake db:migrate
+		creates table in database for app
+	
+"form_for"
+	when updating models (rather than creating now)
+		<%= form_for :model, url: model_path(@model), method: :patch do |f| %>
+			method: :patch for REST protocol
+			
+@variable
+	instance variable
+	
+:variable
+	passed symbol
