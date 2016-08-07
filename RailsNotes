@@ -6,7 +6,7 @@ rails generate model model-name name:type name:type....
 	rake db:migrate
 		creates table in database for app
 	
-"form_for"
+"form_for" for single level objects
 	when updating models (rather than creating now)
 		<%= form_for :model, url: model_path(@model), method: :patch do |f| %>
 			method: :patch for REST protocol
@@ -16,3 +16,14 @@ rails generate model model-name name:type name:type....
 	
 :variable
 	passed symbol
+	
+app/views/layouts/application.html.erb
+	This isnt cross platform (correctly)
+	for mac
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	for windows
+  		<%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
+  		<%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+  	To fix windows and leave as "application", find runtimes.rb file associated with ExecJS and edit UTF-16LE to UTF-8
+  

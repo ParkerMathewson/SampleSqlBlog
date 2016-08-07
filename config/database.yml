@@ -15,9 +15,9 @@ default: &default
   pool: 5
   username: root
   # Blank for MC12
-  #password:
+  password:
   # sqlserver for AZZA
-  password: sqlserver
+  #password: sqlserver
   socket: /tmp/mysql.sock
 
 development:
