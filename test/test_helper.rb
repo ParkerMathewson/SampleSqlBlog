@@ -8,3 +8,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+class ActionController::TestCase
+  setup do
+    request.host = "localhost:3000"
+  end
+end
