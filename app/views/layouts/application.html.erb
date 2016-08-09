@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
- 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ 		<!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> -->
+ 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolink-track': 'reload' %>
   		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  		<title><%= yield(:title) %> | Rails Sample Blog</title>
+  		
+		<%= render 'layouts/shim' %>
+  		<title><%= full_title(yield(:title)) %></title>
   		<%= csrf_meta_tags %>
 	</head>
 	<body>
-
-		<%= yield %>
-
+		<%= render 'layouts/header' %>
+		<div class="container">
+			<%= yield %>
+		<%= render 'layouts/footer' %>
+		</div>
 	</body>
 </html>
