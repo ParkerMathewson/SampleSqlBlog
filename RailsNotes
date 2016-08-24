@@ -32,3 +32,17 @@ Since <IE9 does not fully support HTML5, insert the following lines to help with
   		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
   		</script>
 	<![endif]-->  
+
+To update a single attribute on rails console
+	variable.update_attribute(:column, "value")
+	
+User "debugger" in controller to debug at controller level
+
+Strong Parameters
+	specify which parameters are REQUIRED
+	specify which parameters are PERMITTED
+	this can be done by specifying a helper function in the model file
+		ex:
+			def model_params
+				params.require(:model).permitted(:column, :column)
+			end
