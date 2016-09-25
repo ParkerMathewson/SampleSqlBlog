@@ -3,17 +3,22 @@ Rails.application.routes.draw do
 
   
 
+  get 'sessions/new'
+
 # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
-  get '/about',   to: 'static_pages#about' 
-  get '/contact', to: 'static_pages#contact'
-  get '/help',    to: 'static_pages#help'
-  get '/signup',  to: 'users#new'
-  post '/signup', to: 'users#create'
+  get '/about',     to: 'static_pages#about' 
+  get '/contact',   to: 'static_pages#contact'
+  get '/help',      to: 'static_pages#help'
+  get '/signup',    to: 'users#new'
+  post '/signup',   to: 'users#create'
+  get '/login',     to: 'sessions#new'
+  post '/login',    to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   resources :articles do
     resources :comments
