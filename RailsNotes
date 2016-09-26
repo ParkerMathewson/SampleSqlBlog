@@ -46,3 +46,9 @@ Strong Parameters
 			def model_params
 				params.require(:model).permitted(:column, :column)
 			end
+
+Opening hyperlink in new window
+	<a href.... target="_blank"></a>
+	
+	
+	
