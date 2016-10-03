@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   
 
-  
-
-  get 'sessions/new'
-
 # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -25,6 +21,8 @@ Rails.application.routes.draw do
   end
   
   resources :users
+  resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:edit, :new, :create, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

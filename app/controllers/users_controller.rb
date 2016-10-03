@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.send_activation_email
       log_in @user
-      flash[:success] = "Welcome to Parker's domain!"
+      flash[:success] = "Welcome to Parker's domain!" #Todo: Expand into tutorial
       redirect_to @user
     else
       flash[:danger] = "The was an error with you account submission..."
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    flash[:info] = "Please activate your account!" if !current_user.activated?
   end
   
   def edit
@@ -44,6 +46,7 @@ class UsersController < ApplicationController
   end
   
   def index
+    
     @users = User.paginate(page: params[:page])
   end
   

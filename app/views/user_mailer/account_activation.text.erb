@@ -1,0 +1,6 @@
+Hi <%= @user.name%>,
+
+Welcome to my blogspace! Thank you for signing up, but hold on just for one more click! You are almost there!
+Please click on the link below to finish up your activation!
+
+<%= link_to "Activate!", edit_account_activation_url(@user.activation_token, email: @user.email) %>
