@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'devise'
+gem 'cancancan'
 gem 'rails', '4.2.6'
 gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'bootstrap-sass', '3.3.6'
