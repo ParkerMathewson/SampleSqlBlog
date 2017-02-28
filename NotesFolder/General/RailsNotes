@@ -1,0 +1,38 @@
+To access input from user that is not saved (aka password), you must specify
+	attr_accessor :password
+	
+	in the model ruby file.
+
+rails generate controller controller-name
+	generates controller and supporting view
+
+rails generate model model-name name:type name:type....
+	generates model
+	rake db:migrate
+		creates table in database for app
+				
+@variable
+	instance variable
+	
+:variable
+	passed symbol
+	
+To update a single attribute on rails console
+	variable.update_attribute(:column, "value")
+	
+User "debugger" in controller to debug at controller level
+
+Strong Parameters
+	specify which parameters are REQUIRED
+	specify which parameters are PERMITTED
+	this can be done by specifying a helper function in the model file
+		ex:
+			def model_params
+				params.require(:model).permitted(:column, :column)
+			end
+
+Opening hyperlink in new window
+	<a href.... target="_blank"></a>
+	
+	
+	
